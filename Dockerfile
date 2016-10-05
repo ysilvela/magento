@@ -1,8 +1,11 @@
 FROM occitech/magento:php5.5-apache
 
-ENV MAGENTO_VERSION 1.9.2.4
+ENV MAGENTO_VERSION 1.9.1.0
 
-RUN cd /tmp && curl https://codeload.github.com/OpenMage/magento-mirror/tar.gz/$MAGENTO_VERSION -o $MAGENTO_VERSION.tar.gz && tar xvf $MAGENTO_VERSION.tar.gz && mv magento-mirror-$MAGENTO_VERSION/* magento-mirror-$MAGENTO_VERSION/.htaccess /var/www/htdocs
+RUN cd /tmp 
+RUN curl https://codeload.github.com/OpenMage/magento-mirror/tar.gz/$MAGENTO_VERSION -o $MAGENTO_VERSION.tar.gz 
+RUN tar xvf $MAGENTO_VERSION.tar.gz 
+RUN mv magento-mirror-$MAGENTO_VERSION/* magento-mirror-$MAGENTO_VERSION/.htaccess /var/www/htdocs
 
 RUN chown -R www-data:www-data /var/www/htdocs
 
