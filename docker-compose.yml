@@ -1,5 +1,5 @@
 web:
-  image: alexcheng/magento
+  image: ysilvela/magento
   ports:
     - "80:80"
   links:
