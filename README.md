@@ -10,7 +10,7 @@ This repo creates a Docker image for [Magento 1.x](http://magento.com/).
 
 > The primary goal of this repo is to create Docker images for Magento 1.x development and testing, especially for extensions and themes development. It lacks essential support for production deployment, e.g. Varnish and Redis. Use this wisely for production deployment.
 
-> This repo is only for Magento 1.x. If you are looking for Magento 2.x, check out [alexcheng1982/docker-magento2](https://github.com/alexcheng1982/docker-magento2).
+> This repo is only for Magento 1.x. If you are looking for Magento 2.x, check out [ysilvela/docker-magento2](https://github.com/ysilvela/docker-magento2).
 
 ## Magento versions
 
@@ -29,7 +29,7 @@ Version | Git branch | Tag name
 You can use `docker run` to run this image directly.
 
 ```bash
-docker run -p 80:80 alexcheng/magento
+docker run -p 80:80 ysilvela/magento
 ```
 
 Then finish Magento installation using web UI. You need to have an existing MySQL server.
@@ -44,7 +44,7 @@ A sample `docker-compose.yml` can be found in this repo.
 
 ```yaml
 web:
-  image: alexcheng/magento
+  image: ysilvela/magento
   ports:
     - "80:80"
   links:
@@ -95,7 +95,7 @@ MAGENTO_ADMIN_PASSWORD    | Magento admin password | magentorocks1
 
 If you want to use `install-magento` script and this images is started as a standalone container using `docker run`, make sure these environment variables are passed in `docker run` with `-e` switch.
 
-After Docker container started, use `docker ps` to find container id of image `alexcheng/magento`, then use `docker exec` to call `install-magento` script.
+After Docker container started, use `docker ps` to find container id of image `ysilvela/magento`, then use `docker exec` to call `install-magento` script.
 
 ```bash
 docker exec -it <container id> install-magento
